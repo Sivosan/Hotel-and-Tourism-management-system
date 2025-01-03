@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        /* Body Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #007bff, #f4f4f4);
+            color: #333;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        fieldset {
+            border: none;
+            padding: 0;
+        }
+
+        legend {
+            text-align: center;
+            font-size: 2rem;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            width: auto;
+            margin-right: 8px;
+        }
+
+        /* Buttons */
+        .btn-submit {
+            display: inline-block;
+            padding: 12px 20px;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer Styling */
+        .footer {
+            margin-top: 40px;
+            background-color: #444;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .footer a {
+            color: #00bcd4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+        }
+
+        .popup{
+             width: 400px;
+             background: #fff;
+             border-radius: 6px;
+             position: absolute;
+             top: 0;
+             left: 40%;
+             transform:translate(-50% -50%) scale(0.1);
+             text-align: center;
+             padding: 0 30px 30px;
+             color: #333;
+             visibility: hidden;
+            transition: 0.4s, top 0.4s;
+        }
+        .open-popup{
+            visibility: visible;
+            top: 50%;
+            transform: translate(-50% -50%) scale(1);
+        }
+        .popup img{
+            width: 100px;
+            margin-top: -50px;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .popup h2{
+            font-size: 38px;
+            font-weight: 500;
+            margin: 30px 0 10px;
+        }
+        .popup button{
+            width: 100%;
+            margin-top: 50px;
+            padding: 10px 0;
+            background: #007bff;
+            color: #fff;
+            border: 0;
+            outline: none;
+            font-size: 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Contact Form -->
+    <div class="container">
+        <fieldset>
+            <legend>Contact Us</legend>
+            <form >
+                <!-- First Name -->
+                <label for="firstname">First Name:</label>
+                <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" required>
+
+                <!-- Last Name -->
+                <label for="lastname">Last Name:</label>
+                <input type="text" id="lastname" name="lastname" placeholder="Enter your last name" required>
+
+                <!-- Gender -->
+                <label for="gender">Gender:</label>
+                <input type="radio" name="gender" value="male" id="male"> Male
+                <input type="radio" name="gender" value="female" id="female"> Female
+                <input type="radio" name="gender" value="other" id="other"> Other
+
+                <!-- Email -->
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <!-- Telephone -->
+                <label for="telephone">Telephone:</label>
+                <input type="tel" id="telephone" name="telephone" placeholder="Enter your phone number" required>
+
+                <!-- Places to Visit -->
+                <label>Places to Visit:</label>
+                <input type="checkbox" name="places" value="parks"> Parks
+                <input type="checkbox" name="places" value="beaches"> Beaches
+                <input type="checkbox" name="places" value="religious-places"> Religious Places
+                <input type="checkbox" name="places" value="others"> Others
+
+                <!-- District -->
+                <label for="district">District:</label>
+                <select name="district" id="district" required>
+                    <option value="" disabled selected>Select your district</option>
+                    <option value="anuradhapura">Anuradhapura</option>
+                    <option value="jaffna">Jaffna</option>
+                    <option value="colombo">Colombo</option>
+                    <option value="kandy">Kandy</option>
+                    <option value="batticaloa">Batticaloa</option>
+                    <option value="galle">Galle</option>
+                    <!-- Add more districts as necessary -->
+                </select>
+
+                <!-- Subject -->
+                <label for="message">Subject:</label>
+                <textarea name="message" id="message" cols="30" rows="5" placeholder="Write your message here..." required></textarea>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-submit" onclick="openpopup()">Submit</button>
+                <div class="popup" id="popup">
+                    <img src="./gallery/png-clipart-check-mark-tick-green-tick-mark-angle-leaf-thumbnail.png" >
+                    <h2>Thank you</h2>
+                    <p>Your Details has been successfully submitted.<br>Thank You!</p>
+                    <button type="button" onclick="closepopup()">Ok</button>
+                </div>
+            </form>
+        </fieldset>
+    </div>
+  
+    <!-- Footer Section -->
+    <div class="footer">
+        <p>&copy; 2024 Beauty of Batti. Designed by <a href="#">SHAN</a></p>
+    </div>
+
+    <script>
+    let popup=document.getElementById("popup");
+
+    function openpopup(){
+        popup.classList.add("open-popup");
+    }
+    function closepopup(){
+        popup.classList.remove("open-popup");
+    }
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotels</title>
+    <style>
+        /* General Body Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header Section Styling */
+        .head {
+            background-color: #444;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Table Styling */
+        .hotel-table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .hotel-table th, .hotel-table td {
+            padding: 15px;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+        .hotel-table th {
+            background-color: #00bcd4;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .hotel-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .hotel-table tr:hover {
+            background-color: #f1f1f1;
+            cursor: pointer;
+        }
+
+        .hotel-table img {
+            width: 150px;
+            height: 100px;
+            border-radius: 5px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .hotel-info p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .price-section {
+            color: #444;
+            font-weight: bold;
+        }
+
+        .reserve-btn {
+            display: inline-block;
+            padding: 8px 15px;
+            margin-top: 5px;
+            background-color: #007bff;
+            color: white;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .reserve-btn:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #444;
+            color: white;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer a {
+            color: #00bcd4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="head">Hotels in Batticaloa</header>
+
+    <!-- Hotel Table -->
+    <table class="hotel-table">
+        <thead>
+            <tr>
+                <th>Hotel Name</th>
+                <th>Image</th>
+                <th>Information</th>
+                <th>Price (Per Day)</th>
+                <th>Contact No</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Riviera Hotel</td>
+                <td><img src="./img/riv.jpeg" alt="Riviera Hotel"></td>
+                <td class="hotel-info">
+                    <p>Offering an outdoor swimming pool and a restaurant, Riviera Resort is located in Batticaloa. Free WiFi access is available. Great pool and location with an amazing sunset view!</p>
+                </td>
+                <td class="price-section">LKR 8,000<br><a href="#" class="reserve-btn">Reserve Now</a></td>
+                <td>5879856598</td>
+            </tr>
+            <tr>
+                <td>East Lagoon Hotel</td>
+                <td><img src="./img/east.jpg" alt="East Lagoon Hotel"></td>
+                <td class="hotel-info">
+                    <p>Situated along the banks of Batticaloa Lagoon, this hotel offers tranquil accommodation with a stunning swimming pool and great food. A perfect stay for relaxation.</p>
+                </td>
+                <td class="price-section">LKR 18,000<br><a href="#" class="reserve-btn">Reserve Now</a></td>
+                <td>7543970958</td>
+            </tr>
+            <tr>
+                <td>See View Resort</td>
+                <td><img src="./img/see.jpg" alt="See View Resort"></td>
+                <td class="hotel-info">
+                    <p>Located near Kallady Beach, this 3-star resort features a garden, free parking, and 24-hour room service for a comfortable stay.</p>
+                </td>
+                <td class="price-section">LKR 6,000<br><a href="#" class="reserve-btn">Reserve Now</a></td>
+                <td>7686768790</td>
+            </tr>
+            <tr>
+                <td>Aki Villa</td>
+                <td><img src="./img/aki.jpg" alt="Aki Villa"></td>
+                <td class="hotel-info">
+                    <p>Located in Pasikuda, Aki Villa offers a serene stay with an outdoor pool, a garden, and restaurant facilities.</p>
+                </td>
+                <td class="price-section">LKR 4,000<br><a href="#" class="reserve-btn">Reserve Now</a></td>
+                <td>4978329849</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Batticaloa Hotels. Designed by <a href="#">SHAN</a></p>
+    </footer>
+</body>
+</html>
